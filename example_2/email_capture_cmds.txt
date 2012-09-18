@@ -1,0 +1,40 @@
+Script started on Sat Sep 15 14:12:27 2012
+[?1034hbash-3.2$ # Email Capture co[K[KCommands
+bash-3.2$ # Create model
+bash-3.2$ padrino g model visitor[K[Ker[K[Kor name:string email:st ring
+[1m[32m       apply[0m  orms/activerecord
+[1m[32m      create[0m  models/visitor.rb
+[1m[32m      create[0m  db/migrate/002_create_visitors.rb
+bash-3.2$ padrino rake dm:[K[K[Kar:migrate
+=> Executing Rake ar:migrate ...
+[36m  DEBUG[0m -[33m [0m[1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+[32m   INFO[0m -[33m [0mMigrating to CreateAccounts (1)
+[32m   INFO[0m -[33m [0mMigrating to CreateVisitors (2)
+[36m  DEBUG[0m -[33m [0m[1m[35m (0.0ms)[0m  select sqlite_version(*)
+[36m  DEBUG[0m -[33m [0m[1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+==  CreateVisitors: migrating =================================================
+-- create_table(:visitors)
+[36m  DEBUG[0m -[33m [0m[1m[35m (0.5ms)[0m  CREATE TABLE "visitors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+   -> 0.0064s
+==  CreateVisitors: migrated (0.0065s) ========================================
+
+[36m  DEBUG[0m -[33m [0m[1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('2')[0m
+[36m  DEBUG[0m -[33m [0m[1m[35m (0.8ms)[0m  commit transaction
+[36m  DEBUG[0m -[33m [0m[1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+[36m  DEBUG[0m -[33m [0m[1m[35m (0.0ms)[0m  PRAGMA index_list("accounts")
+[36m  DEBUG[0m -[33m [0m[1m[36m (0.0ms)[0m  [1mPRAGMA index_list("visitors")[0m
+bash-3.2$ padrino g admin_page visiter[K[Kor
+[1m[32m      create[0m  admin/views/visitors
+[1m[32m      create[0m  admin/controllers/visitors.rb
+[1m[32m      create[0m  admin/views/visitors/_form.erb
+[1m[32m      create[0m  admin/views/visitors/edit.erb
+[1m[32m      create[0m  admin/views/visitors/index.erb
+[1m[32m      create[0m  admin/views/visitors/new.erb
+[1m[32m      insert[0m  admin/app.rb
+bash-3.2$ padrino g plugin bootstrap
+[1m[32m       apply[0m  https://github.com/padrino/padrino-recipes/raw/master/plugins/bootstrap_plugin.rb
+[1m[32m      create[0m    public/stylesheets/bootstrap.css
+bash-3.2$ exit
+exit
+
+Script done on Sat Sep 15 23:55:16 2012
